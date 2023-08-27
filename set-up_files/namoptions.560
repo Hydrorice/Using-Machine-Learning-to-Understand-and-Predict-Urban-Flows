@@ -1,0 +1,85 @@
+&RUN
+iexpnr       = 560
+runtime      = 14410.
+trestart     = 3600
+dtmax        = 1
+irandom      = 43
+randu        = 0.01
+ladaptive    = .true.
+nprocx       = 32
+nprocy       = 8
+libm         = .true.
+/
+
+&OUTPUT
+lfielddump   = .true.
+tfielddump   = 1800.
+fieldvars    = 'u0,v0,w0,p0'
+ltdump       = .true.
+lxytdump     = .true.
+tstatsdump   = 1800
+tsample      = 1
+/
+
+&DOMAIN
+itot         = 640
+jtot         = 128
+ktot         = 192
+xlen         = 3200
+ylen         = 640
+/
+
+&PHYSICS
+ps           = 101300.
+igrw_damp    = 0
+luvolflowr   = .false.
+uflowrate    = 6
+/
+
+&DYNAMICS
+ipoiss       = 0
+/
+
+&NAMSUBGRID
+lvreman      = .true.
+/
+
+&BC
+BCxm         = 3
+wtsurf       = 0.
+wqsurf       = 0.
+thls         = 288.
+z0           = 0.01
+z0h          = 0.000067
+/
+
+&WALLS
+nfcts = 7510
+nsolpts_u = 668160
+nsolpts_v = 668160
+nsolpts_w = 675840
+nsolpts_c = 593920
+nbndpts_u = 434560
+nbndpts_v = 434560
+nbndpts_w = 416000
+nbndpts_c = 416000
+nfctsecs_u = 319200
+nfctsecs_v = 319942
+nfctsecs_w = 355140
+nfctsecs_c = 444274
+/
+
+&DRIVER
+idriver      = 2
+driverjobnr  = 453
+driverstore  = 14410
+/
+
+&INPS
+zsize        = 480
+u0           = 6
+stl_file     = geom.STL
+stl_ground   = .true.
+diag_neighbs = .true.
+diag_cells = .true.
+/
